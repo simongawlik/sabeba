@@ -1,0 +1,6 @@
+*.pyc
+*.swp
+*.json
+*~
+setting.py
+local_settings.py
