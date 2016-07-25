@@ -1,0 +1,17 @@
+{% load static %}
+
+<!--DOCTYPE html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+</head>
+<body>
+
+
+{{ instance.title }}<br/>
+<img src="{% get_media_prefix %}{{ instance.image_path }}" height="{{ instance.height }}" width="{{ instance.height }}">
+
+
+</body>
+</html>
