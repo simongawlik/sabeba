@@ -1,0 +1,19 @@
+{% load static %}
+
+<!--DOCTYPE html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ title }}</title>
+</head>
+<body>
+
+{% for image in image_list %}
+
+{{ image.title }}<br/>
+<img src="{% get_media_prefix %}{{ image.image_path }}" height="{{ image.height }}" width="{{ image.height }}">
+
+{% endfor %}
+
+</body>
+</html>
