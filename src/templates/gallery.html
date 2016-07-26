@@ -1,19 +1,13 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!--DOCTYPE html -->
-<!DOCTYPE html>
-<html>
-<head>
-	<title>{{ title }}</title>
-</head>
-<body>
 
-{% for image in image_list %}
+{% block content %}
 
-{{ image.title }}<br/>
-<img src="{% get_media_prefix %}{{ image.image_path }}" height="{{ image.height }}" width="{{ image.height }}">
+	{% for image in image_list %}
 
-{% endfor %}
+	<a href='{% url "detail" id=image.id %}'>{{ image.title }}</a><br/>
+	<img src="{{ image.image_path }}" height="{{ image.height }}" width="{{ image.height }}">
 
-</body>
-</html>
+	{% endfor %}
+
+{% endblock content %}

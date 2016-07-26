@@ -1,17 +1,9 @@
-{% load static %}
+{% extends "base.html" %}
 
-<!--DOCTYPE html -->
-<!DOCTYPE html>
-<html>
-<head>
-	<title>{{ title }}</title>
-</head>
-<body>
+{% block content %}
 
 
 {{ instance.title }}<br/>
-<img src="{% get_media_prefix %}{{ instance.image_path }}" height="{{ instance.height }}" width="{{ instance.height }}">
+<img src="{{ instance.image_path }}" height="{{ instance.height }}" width="{{ instance.height }}">
 
-
-</body>
-</html>
+{% endblock content %}

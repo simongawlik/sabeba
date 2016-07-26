@@ -11,8 +11,8 @@ def gallery(request):
 	}
 	return render(request, "gallery.html", context)
 
-def image_detail(request):
-	instance = get_object_or_404(Photo, id=1)
+def image_detail(request, id):
+	instance = get_object_or_404(Photo, id=id)
 	context = {
 		"title": instance.title,
 		"instance": instance,
