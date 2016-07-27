@@ -6,7 +6,7 @@
 	{% for image in image_list %}
 
 	<a href='{% url "detail" id=image.id %}'>{{ image.title }}</a><br/>
-	<img src="{{ image.image_path }}" height="{{ image.height }}" width="{{ image.height }}"></br>
+	<img src="{{ image.image_path.url }}" height="{{ image.height }}" width="{{ image.width }}"></br>
 
 	{% endfor %}
 
