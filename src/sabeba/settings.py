@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'blog',
     'gallery_photos',
 ]
 
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'sabeba.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'DIRS': [os.path.join(BASE_DIR, "templates"), os.path.join(BASE_DIR, "sabeba", "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

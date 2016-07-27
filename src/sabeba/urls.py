@@ -21,8 +21,13 @@ from django.contrib import admin
 
 
 urlpatterns = [
-    url(r'^gallery/', include('gallery_photos.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^gallery/', include('gallery_photos.urls')),
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login'),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', {'next_page': '/'}),
+    url(r'^blog/', include('blog.urls')),
+    #url(r'^$', views.home, name='home'),
+    # need to create view for homepage
 ]
 
 if settings.DEBUG:
