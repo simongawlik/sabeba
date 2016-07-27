@@ -6,8 +6,24 @@
 	{% for image in image_list %}
 
 	<a href='{% url "detail" id=image.id %}'>{{ image.title }}</a><br/>
-	<img src="{{ image.image_path }}" height="{{ image.height }}" width="{{ image.height }}">
+	<img src="{{ image.image_path }}" height="{{ image.height }}" width="{{ image.height }}"></br>
 
 	{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if image_list.has_previous %}
+            <a href="?page={{ image_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ image_list.number }} of {{ image_list.paginator.num_pages }}.
+        </span>
+
+        {% if image_list.has_next %}
+            <a href="?page={{ image_list.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
 
 {% endblock content %}
